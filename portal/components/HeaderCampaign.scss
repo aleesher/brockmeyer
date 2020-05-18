@@ -1,0 +1,247 @@
+@import "colors";
+@import "mixins";
+
+#header-campaign {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    background-color: $white;
+    padding: 32px 128px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-top: 1px solid $grayBorder;
+
+    &.pos-relative {
+      position: relative;
+    }
+
+    @include breakpoint(xs) {
+      padding: 16px 18px;
+    }
+
+    .header-row-back {
+      display: flex;
+      align-items: center;
+      padding-bottom: 8px;
+      text-decoration: none;
+
+      @include breakpoint(xs) {
+        display: none;
+      }
+
+      img {
+        cursor: pointer;
+        transform: scale(-1, 1);
+        width: 18px;
+        position: relative;
+        top: -1px;
+        color: $textLightGrey;
+      }
+
+      .back-to-campaigns {
+        cursor: pointer;
+        margin-left: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        color: $textLightGrey;
+      }
+    }
+
+    .header-row-campaign-name {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+
+      @include breakpoint(xs) {
+        padding: 0;
+        min-height: 32px;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: calc(100% - 80px);
+      }
+
+      .mobile-back-btn {
+        display: none;
+        margin-left: -5px;
+        margin-right: 5px;
+        color: $lightGreen;
+        cursor: pointer;
+        height: 24px;
+
+        @include breakpoint(xs) {
+          display: inline;
+        }
+      }
+
+      .campaign-name {
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(xs) {
+          justify-content: space-between;
+          flex: 1;
+        }
+
+        p,
+        span {
+          color: $lightGreen;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 32px;
+          margin-right: 8px;
+          word-break: break-word;
+
+          @include breakpoint(xs) {
+            font-size: 18px;
+            line-height: 1.2em;
+          }
+        }
+
+        span {
+          outline: none;
+          border-bottom: transparent;
+          transition: border-bottom 0.2s ease-out;
+        }
+
+        span.editable {
+          border-bottom: 1px solid $grayBorder;
+        }
+
+        .icon {
+          color: $lightGray;
+          height: 18px;
+          width: 18px;
+          cursor: pointer;
+
+          @include breakpoint(xs) {
+            display: none;
+          }
+        }
+
+        .mobile-more-btn {
+          display: none;
+          color: $lightGray;
+          cursor: pointer;
+          position: relative;
+          top: 10px;
+
+          @include breakpoint(xs) {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    .buttons-container {
+      display: flex;
+
+      @include breakpoint(xs) {
+        display: none;
+      }
+
+      > button,
+      div > button,
+      > div > div > div > button {
+        height: 40px;
+        min-width: 110px;
+        background-color: $blue;
+        font-weight: 400;
+        justify-content: center;
+        margin-right: 20px;
+
+        @include breakpoint(xs) {
+          width: 90px;
+          font-size: 14px;
+          height: 36px;
+        }
+      }
+
+      > div {
+        display: inline-block;
+      }
+
+      .share-campaign-btn {
+        min-width: 110px;
+        margin-right: 0px;
+
+        @include breakpoint(xs) {
+          width: 140px;
+        }
+      }
+    }
+
+    .header-row-company {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(xs) {
+        margin-top: 5px;
+        max-width: calc(100% - 80px);
+      }
+
+      .company-name-container {
+        color: $textLightGrey;
+        font-size: 16px;
+        font-weight: 500;
+
+        @include breakpoint(xs) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .subheader {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+
+      .campaign-info {
+        width: 100%;
+      }
+    }
+
+    .share-campaign-btn {
+      display: flex;
+      justify-content: center;
+
+      p {
+        position: absolute;
+      }
+
+      @include breakpoint(xs) {
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      &.mobile {
+        > button {
+          font-size: 12px;
+          min-width: 65px;
+          padding: 6px 12px;
+        }
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
+
+      .share-campaign-button {
+        min-width: 110px;
+        position: absolute;
+        background-color: white !important;
+        color: black;
+        border: 5px black;
+        border: solid;
+        border-width: 3px;
+
+        @include breakpoint(xs) {
+          min-width: 90px;
+        }
+      }
+    }
+    .campaign-info {
+      width: 100%;
+    }
+  }
+}

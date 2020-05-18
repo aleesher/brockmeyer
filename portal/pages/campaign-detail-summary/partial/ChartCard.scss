@@ -1,0 +1,79 @@
+@import "colors";
+@import "mixins";
+
+.chart-item {
+  display: flex;
+  margin-bottom: 32px;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+  }
+
+  &.card .chart-card {
+    display: flex;
+    flex: 1 1 50%;
+    padding: 48px;
+    flex-direction: column;
+
+    @include breakpoint(xs) {
+      padding: 24px;
+    }
+
+    &:first-child {
+      border-right: 1px solid $grayBorder;
+
+      @include breakpoint(xs) {
+        border-bottom: 1px solid $grayBorder;
+        border-right: none;
+      }
+    }
+  }
+
+  .card-caption {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    .title {
+      color: $darkBlue;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+
+      @include breakpoint(xs) {
+        font-size: 18px;
+      }
+    }
+
+    .chart-mark {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-line-row {
+      display: flex;
+      align-items: center;
+
+      .chart-line {
+        display: flex;
+        width: 20px;
+        height: 5px;
+        margin-right: 8px;
+      }
+
+      .chart-line.green {
+        background: $lightGreen;
+      }
+
+      .chart-line.yellow {
+        background: $orange;
+      }
+
+      .chart-line-title {
+        color: $lightGray;
+        font-size: 12px;
+      }
+    }
+  }
+}

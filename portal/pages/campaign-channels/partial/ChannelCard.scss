@@ -1,0 +1,249 @@
+@import "~react-toggle-switch/dist/css/switch.min.css";
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.channel-item {
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  border: 2px solid transparent;
+  flex-direction: column;
+
+  @include breakpoint(xs) {
+    display: block;
+    position: relative;
+    min-height: 148px;
+    max-height: unset;
+  }
+
+  &.selected {
+    border: 2px solid $lightGreen;
+
+    .channel-selector label {
+      color: $lightGreen;
+    }
+  }
+
+  .channel-info {
+    display: flex;
+    position: relative;
+
+    @include breakpoint(lgmax) {
+      max-height: 158px;
+    }
+
+    @include breakpoint(lg) {
+      height: 148px;
+    }
+
+    @include breakpoint(xs) {
+      display: flex;
+      flex-direction: column;
+      max-height: unset;
+      height: auto;
+    }
+  }
+
+  .channel-logo {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(xs) {
+      padding: 0;
+      margin-bottom: 10px;
+      overflow: hidden;
+      height: 150px;
+    }
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+  }
+
+  .channel-description {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+
+    @include breakpoint(lgmax) {
+      font-size: 16px;
+    }
+
+    @include breakpoint(xs) {
+      line-height: 1em;
+      padding: 7px;
+
+      h2 {
+        font-size: 14px;
+      }
+    }
+
+    .rating {
+      margin-bottom: -2px;
+      display: flex;
+
+      @include breakpoint(xs) {
+        margin: 10px 0;
+      }
+    }
+
+    .suggestion-score {
+      display: flex;
+      align-items: center;
+      color: $lightGreen;
+
+      .label {
+        color: $lightGray;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 30px;
+        padding-right: 8px;
+      }
+    }
+
+    .summary,
+    .links {
+      color: $lightGray;
+      font-size: 14px;
+      text-transform: capitalize;
+
+      @include breakpoint(xs) {
+        font-size: 12px;
+      }
+
+      a {
+        margin-right: 16px;
+        text-decoration: underline;
+        cursor: pointer;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+      }
+    }
+  }
+
+  .channel-selector {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 14px;
+    min-width: 152px;
+
+    .switch.on {
+      background: $lightGreen;
+    }
+
+    .switch.disabled {
+      background: grey;
+    }
+
+    label {
+      margin-right: 12px;
+      color: $lightGray;
+      font-size: 11px;
+
+      &.selected {
+        color: $lightGreen;
+      }
+    }
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+      justify-content: center;
+      min-width: unset;
+      align-items: flex-start;
+    }
+  }
+
+  &.tile-view {
+    display: block;
+    position: relative;
+    height: auto;
+    width: calc(33% - 6px);
+    box-sizing: border-box;
+    margin-right: 9px;
+
+    .channel-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+
+    .channel-logo {
+      padding: 5px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      height: 150px;
+    }
+
+    .channel-description {
+      line-height: 1em;
+      padding: 0;
+
+      h2 {
+        font-size: 14px;
+      }
+
+      .summary,
+      .links {
+        font-size: 12px;
+        margin: 3px 0px;
+      }
+    }
+
+    .channel-selector {
+      font-size: 12px;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      label {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .expand-more {
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint(xs) {
+      margin-top: 10px;
+    }
+  }
+
+  .no-display {
+    display: none;
+  }
+
+  .channel-summary {
+    font-weight: 100;
+    font-size: 15px;
+    padding-top: 15px;
+  }
+
+  .expand-icon {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+}

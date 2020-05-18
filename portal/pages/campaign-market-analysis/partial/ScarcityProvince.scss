@@ -1,0 +1,14 @@
+#scarcity-province {
+  display: flex;
+  flex-direction: column;
+
+  .scarcity-province-graph {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+
+    #chart-1 {
+      height: 400px !important;
+    }
+  }
+}

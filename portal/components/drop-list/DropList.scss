@@ -1,0 +1,72 @@
+@import "../styles/colors";
+@import "../styles/_mixins.scss";
+
+.bro-droplist {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  width: 512px;
+
+  @include breakpoint(xs) {
+    width: calc(100% - 130px);
+  }
+
+  .select {
+    display: flex;
+    align-items: center;
+
+    select.bro-select {
+      appearance: none;
+      border-radius: 6px;
+      border: 1px solid $grayBorder;
+      box-shadow: inset 0 4px 6px -6px $shadowGray;
+      color: $darkBlue;
+      font-size: 18px;
+      font-weight: 500;
+      height: 56px;
+      outline: none;
+      padding-left: 14px;
+      padding-right: 16px;
+      width: 100%;
+      background-color: $white;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      @include breakpoint(xs) {
+        height: 36px;
+      }
+
+      &.gray {
+        color: $lightGray;
+      }
+
+      &.error {
+        border-color: $errorColor;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      > option {
+        background: $white;
+        border-radius: 0 0 6px 6px;
+        border: 1px solid $grayBorder;
+        box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+      }
+    }
+
+    .arrow {
+      pointer-events: none;
+      margin-left: -40px;
+      color: $selectArrowGray;
+    }
+  }
+
+  span {
+    color: $errorColor;
+    font-size: 14px;
+    margin: 4px;
+  }
+}

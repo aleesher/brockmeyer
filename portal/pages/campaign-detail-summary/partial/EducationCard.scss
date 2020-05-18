@@ -1,0 +1,100 @@
+@import "colors";
+@import "mixins";
+
+.education-item {
+  display: flex;
+  margin-bottom: 32px;
+  padding: 40px;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .label {
+    display: flex;
+    flex: 1 1 20%;
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .label .title {
+    color: $darkBlue;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+
+    @include breakpoint(xs) {
+      font-size: 18px;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex: 1 1 80%;
+    flex-direction: column;
+
+    .item-row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $grayBorder;
+        padding-bottom: 16px;
+
+        @include breakpoint(xs) {
+          padding-bottom: 12px;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: 16px;
+
+        @include breakpoint(xs) {
+          padding-top: 12px;
+        }
+      }
+
+      .item-title {
+        display: flex;
+        flex: 1 1 20%;
+        color: $breadCrumbGrey;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 16px;
+
+        @include breakpoint(xs) {
+          flex: 1 1 25%;
+          font-size: 14px;
+          margin-right: 10px;
+        }
+      }
+
+      .item-text {
+        display: flex;
+        flex: 1 1 80%;
+        color: $darkBlue;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 29px;
+
+        @include breakpoint(xs) {
+          font-size: 14px;
+          line-height: 1.3em;
+        }
+
+        &:empty {
+          &::before {
+            content: "";
+            width: 8px;
+            height: 2px;
+            background: $darkBlue;
+          }
+        }
+      }
+    }
+  }
+}

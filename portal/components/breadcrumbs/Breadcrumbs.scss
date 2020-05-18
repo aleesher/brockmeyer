@@ -1,0 +1,66 @@
+@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+
+.breadcrumbs {
+  background-color: $breadCrumbBackground;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.2s ease-out;
+
+  @include breakpoint(xs) {
+    max-width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    height: 60px;
+  }
+
+  .breadcrumb-container {
+    display: flex;
+    align-items: center;
+
+    a,
+    svg,
+    span,
+    div {
+      color: $breadCrumbGrey;
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0 8px;
+
+      @include breakpoint(xs) {
+        margin: 0 3px;
+        font-size: 11px;
+        white-space: nowrap;
+      }
+
+      &.selected {
+        color: black;
+        font-weight: 700;
+      }
+    }
+
+    div {
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /**
+    Prevent bolded (selected) breadcrumbs from moving stuff around by
+    a hidden invisible title text behind the breadcrumb that is already bold
+    and thus putting the inline tag to its bold width
+    */
+    span::after {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+}

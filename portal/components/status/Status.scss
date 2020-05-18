@@ -1,0 +1,32 @@
+@import "colors";
+@import "mixins";
+
+.status-container {
+  border-radius: 16px;
+  background-color: $lightGray;
+  padding: 4px 12px;
+  margin-right: 12px;
+  color: $white;
+  font-weight: 500;
+
+  @include breakpoint(xs) {
+    padding: 2px 12px;
+  }
+
+  &.order_publish,
+  &.order_publiceren {
+    background-color: $lightGreen;
+  }
+
+  &.order_online {
+    background-color: $mediumGreen;
+  }
+
+  &.order_open {
+    background-color: $yellow;
+  }
+
+  &.order_offline {
+    background-color: $blue;
+  }
+}

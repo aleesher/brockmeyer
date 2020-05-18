@@ -1,0 +1,243 @@
+@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+
+.filters-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .search-icon {
+      font-size: 32px;
+      color: black;
+      cursor: pointer;
+      margin-right: 12px;
+
+      @include breakpoint(xs) {
+        font-size: 24px;
+      }
+    }
+
+    #search-query {
+      background: transparent;
+      border: 0;
+      height: 32px;
+      font-size: 18px;
+      outline: none;
+      flex: 1;
+
+      @include breakpoint(xs) {
+        font-size: 14px;
+      }
+    }
+
+    @include breakpoint(xs) {
+      border-bottom: 1px solid $darkBlue;
+      opacity: 0.8;
+      margin-left: 24px;
+      flex: 1;
+
+      &.fullWidth {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .select-wrapper {
+    display: flex;
+
+    @include breakpoint(xs) {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-out;
+
+      .filter-select {
+        label {
+          width: calc(100% - 172px);
+        }
+
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+
+      &:not(.showFilters) {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .tile-wrapper {
+        display: none;
+      }
+    }
+
+    .tile-wrapper {
+      display: flex;
+      align-items: center;
+
+      .tile-label {
+        color: $darkBlue;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 10px;
+      }
+
+      .tile-container {
+        display: flex;
+        align-items: center;
+        background-color: $selectBg;
+        border-radius: 3px;
+
+        .tile-item {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          padding: 5px;
+
+          svg {
+            fill: $lightGray;
+          }
+
+          &:first-child {
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+
+            svg {
+              transform: translateY(-1px);
+            }
+          }
+
+          &:last-child {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+
+          &.active {
+            background-color: $lightGray;
+            border-radius: 3px;
+
+            svg {
+              fill: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .filter-select {
+      display: flex;
+      align-items: center;
+      margin-left: 24px;
+
+      @include breakpoint(xs) {
+        margin-right: 24px;
+      }
+
+      label {
+        color: $darkBlue;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 12px;
+      }
+
+      .select-style {
+        width: 172px;
+        border-radius: 3px;
+        overflow: hidden;
+        background: url("/assets/images/arrow.png") no-repeat right #e7ebf0;
+        background-size: contain;
+      }
+
+      .select-style select {
+        padding: 8px 16px;
+        width: 110%;
+        height: 36px;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        color: $darkBlue;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .select-style select:focus {
+        outline: none;
+      }
+
+      .select-style select::-ms-expand {
+        display: none;
+      }
+    }
+  }
+
+  .open-filter {
+    background: $lightGray;
+    font-size: 12px;
+    padding: 4px 10px;
+    font-weight: 400;
+    margin: 0 16px;
+
+    &.isChanged {
+      background: $darkBlue;
+    }
+
+    svg {
+      margin-right: 6px;
+      height: 12px;
+      width: 12px;
+    }
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  &.channels-bar {
+    .select-wrapper {
+      @include breakpoint(lgmax) {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+      }
+    }
+
+    .open-filter {
+      @include breakpoint(lgmax) {
+        display: block;
+      }
+    }
+  }
+
+  &.all-channels {
+    .search-wrapper {
+      @include breakpoint(xs) {
+        margin-left: 0;
+      }
+    }
+
+    & + .filter-container {
+      .filter-box {
+        padding: 0;
+      }
+    }
+  }
+}

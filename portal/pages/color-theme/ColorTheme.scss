@@ -1,0 +1,144 @@
+@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+
+#color-theme {
+  .title {
+    color: $darkBlue;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .theme-titles {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+
+    .reset-button {
+      margin: 0px 20px;
+    }
+  }
+
+  .color-scheme-instructions {
+    margin: 30px 0;
+    font-size: 15px;
+  }
+
+  .theme-logo-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    .logo-item {
+      display: flex;
+    }
+
+    .logo-img {
+      object-fit: contain;
+      max-height: 125px;
+      margin-left: 20px;
+      max-width: 150px;
+    }
+  }
+
+  .all-components {
+    display: flex;
+    justify-content: space-around;
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+    }
+
+    .colors-checkoxes {
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+
+      @include breakpoint(xs) {
+        width: 100%;
+      }
+    }
+
+    .color-pickers {
+      display: flex;
+      margin-bottom: 50px;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      @include breakpoint(xs) {
+        flex-direction: column;
+      }
+
+      .color-title {
+        margin-bottom: 20px;
+        font-size: 20px;
+
+        @include breakpoint(xs) {
+          margin-top: 20px;
+        }
+      }
+
+      .color-item {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        &.primary {
+          margin-right: 10px;
+        }
+
+        @include breakpoint(xs) {
+          width: 100%;
+        }
+      }
+    }
+
+    .font-item {
+      margin-bottom: 10px;
+
+      label {
+        padding-left: 20px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .button-color-agreements {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .agree-button-text {
+      margin: 10px 0px;
+      font-size: 15px;
+    }
+  }
+
+  .preview-description {
+    font-size: 18px;
+  }
+
+  .preview-component {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+
+    .preview-component-text {
+      width: 300px;
+      font-size: 16px;
+    }
+
+    &.channel {
+      max-width: 700px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 30px 0px;
+    }
+  }
+}

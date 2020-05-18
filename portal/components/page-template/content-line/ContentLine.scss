@@ -1,0 +1,14 @@
+@import "_animation";
+@import "_colors";
+@import "_mixins";
+
+.content-line {
+  width: 100%;
+  height: 24px;
+  background-color: $googleGrey;
+  border-radius: 4px;
+
+  @include breakpoint(xs) {
+    height: 16px;
+  }
+}

@@ -1,0 +1,56 @@
+@import "colors";
+
+.propmt-wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .prompt-message {
+    background: $buttonBlue;
+    padding: 20px;
+    max-width: 500px;
+    font-size: 16px;
+    color: $white;
+    border-radius: 8px;
+
+    .each-message {
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-top: 12px;
+      }
+
+      svg {
+        color: $lightGreen;
+        font-size: 22px;
+      }
+
+      .processing {
+        animation: rotation 1.3s infinite linear;
+        background-color: $white;
+        height: 20px;
+        mask-image: url(/assets/images/spinner.svg);
+        mask-repeat: no-repeat;
+        mask-size: 20px;
+        width: 23px;
+        -webkit-animation: rotation 1.3s infinite linear;
+        -webkit-mask-image: url(/assets/images/spinner.svg);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: 20px;
+      }
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+}

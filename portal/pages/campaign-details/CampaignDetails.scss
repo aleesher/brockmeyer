@@ -1,0 +1,22 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+#campaign-details {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+
+  .title-bar {
+    padding: 42px 0;
+
+    @include breakpoint(xs) {
+      padding: 20px 15px;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

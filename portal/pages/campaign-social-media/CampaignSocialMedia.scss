@@ -1,0 +1,21 @@
+@import "colors";
+
+#campaign-social-media {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+
+  .title-bar {
+    padding: 40px 0;
+  }
+
+  .spacer {
+    height: 60px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

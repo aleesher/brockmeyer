@@ -1,0 +1,81 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+#campaign-page {
+  overflow-x: hidden;
+
+  .filters-bar {
+    margin: 24px 0;
+
+    @include breakpoint(xs) {
+      margin: 12px 0;
+    }
+  }
+
+  .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grayBorder;
+    padding: 42px 0;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      box-sizing: border-box;
+
+      @include breakpoint(xs) {
+        padding: 8px 38px;
+      }
+
+      svg {
+        font-size: 20px;
+        margin-right: 8px;
+      }
+    }
+
+    @include breakpoint(xs) {
+      justify-content: center;
+    }
+  }
+
+  .shiftCampaignList {
+    margin-top: 145px;
+    transition: margin-top 0.2s ease-out;
+  }
+
+  .tour {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .tour-button {
+    margin-right: 20px;
+  }
+
+  .tour-button-mobile {
+    font-size: 12px;
+    padding: 4px 10px;
+    font-weight: 400;
+    margin: 0 16px;
+    margin-bottom: 10px;
+  }
+
+  .tour-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}

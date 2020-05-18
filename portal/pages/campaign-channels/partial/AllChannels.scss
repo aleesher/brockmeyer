@@ -1,0 +1,62 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+#all-channels {
+  display: flex;
+  flex: 1 0 100%;
+  margin: 0 -10%;
+
+  @include breakpoint(lgmax) {
+    margin: 0;
+  }
+
+  .select-filter__value-container {
+    max-width: 200px;
+    box-sizing: border-box;
+
+    .select-filter__multi-value {
+      max-width: 100%;
+    }
+  }
+
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    padding: 16px;
+
+    .channel-group {
+      transition: opacity 0.3s ease-out;
+      transition: margin-top 0.3s ease-out, visibility 0.3s ease-out;
+      margin-top: 32px;
+
+      &.hide-channel-group {
+        @include breakpoint(lgmax) {
+          transition: opacity 0.3s ease-out;
+          transition: margin-top 0.3s ease-out, visibility 0.3s ease-out;
+        }
+      }
+    }
+
+    .channel-group {
+      &.tile-group {
+        & > div {
+          display: flex;
+          flex-flow: row wrap;
+        }
+      }
+    }
+
+    .channel-type {
+      margin-bottom: 18px;
+    }
+
+    .filters-bar {
+      margin: 14px 0;
+    }
+
+    @include breakpoint(xs) {
+      max-width: 100%;
+    }
+  }
+}

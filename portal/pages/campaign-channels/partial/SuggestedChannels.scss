@@ -1,0 +1,29 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+#suggested-channel {
+  display: flex;
+
+  .channel-list {
+    flex: 3;
+    padding: 16px;
+
+    @include breakpoint(xs) {
+      padding: 16px 16px 100px;
+      max-width: calc(100% - 32px);
+    }
+
+    .channel-group:first-child .channel-type {
+      margin-top: 22px;
+      margin-bottom: 22px;
+    }
+
+    .channel-group + .channel-group {
+      margin-top: 32px;
+    }
+
+    .channel-type {
+      margin-bottom: 18px;
+    }
+  }
+}

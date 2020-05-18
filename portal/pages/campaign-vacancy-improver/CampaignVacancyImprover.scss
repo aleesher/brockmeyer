@@ -1,0 +1,68 @@
+@import "colors";
+@import "../styles/_mixins.scss";
+
+#campaign-vacancy-improver {
+  .title-bar {
+    flex: 3;
+    padding: 40px 40px 40px 0px;
+  }
+
+  .empty-div {
+    flex: 1;
+  }
+
+  .page-subtitle {
+    margin-top: 16px;
+    color: $breadCrumbGrey;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+    width: auto;
+
+    a {
+      color: $breadCrumbGrey;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+
+  .vacancy-improver-container {
+    display: flex;
+  }
+
+  .text-area-box {
+    flex: 3;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+  }
+
+  .ig-logo {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+      font-size: 12px;
+      margin-right: 8px;
+      color: grey;
+    }
+
+    img {
+      height: 18px;
+    }
+  }
+
+  p,
+  span {
+    position: relative;
+  }
+}

@@ -1,0 +1,176 @@
+@import "colors";
+@import "mixins";
+
+.customer-form {
+  max-width: 1050px;
+
+  .edit-form {
+    margin-left: 128px;
+
+    @include breakpoint(xs) {
+      margin-left: 0;
+    }
+  }
+
+  &.vertical {
+    .input-group {
+      display: flex;
+    }
+  }
+
+  .input-group {
+    position: relative;
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+      padding: 0 20px;
+
+      .bro-input-wrapper {
+        max-width: 100%;
+        margin-bottom: 12px;
+
+        input,
+        .select__control {
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    label {
+      color: $darkBlue;
+      font-weight: 800;
+      margin-bottom: 12px;
+      margin-right: 48px;
+      font-size: 18px;
+      width: 136px;
+      line-height: 56px;
+
+      @include breakpoint(xs) {
+        font-size: 14px;
+        margin: 0;
+        line-height: 40px;
+      }
+    }
+
+    .address-inputs {
+      display: flex;
+      flex-direction: column;
+
+      .address-row-first {
+        display: flex;
+
+        div:first-child {
+          width: 384px;
+        }
+
+        div:last-child {
+          width: 112px;
+          margin-left: 16px;
+        }
+      }
+
+      .address-row-secnd {
+        display: flex;
+
+        div:first-child {
+          width: 112px;
+        }
+
+        div:last-child {
+          margin-left: 16px;
+          width: 384px;
+        }
+      }
+
+      input + input {
+        margin-left: 12px;
+      }
+    }
+
+    #country-input {
+      display: block;
+
+      .select__indicators,
+      .select__dropdown-indicator {
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    img {
+      height: 144px;
+      max-width: 512px;
+      margin-right: 16px;
+      margin-bottom: 24px;
+      border: 1px solid $grayBorder;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+      @include breakpoint(xs) {
+        margin-bottom: 12px;
+        margin-right: 0;
+      }
+    }
+
+    textarea {
+      min-height: 135px;
+      width: calc(100% - 154px);
+
+      @include breakpoint(xs) {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.submitting {
+    cursor: wait;
+  }
+
+  .input-group {
+    position: relative;
+
+    &.error {
+      .select__control {
+        border-color: $errorColor;
+      }
+
+      .error-text {
+        color: $errorColor;
+        font-size: 14px;
+        margin: 4px;
+      }
+    }
+
+    label {
+      color: $darkBlue;
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .select__control {
+      height: 56px;
+      color: $lightGray;
+      font-size: 18px;
+      font-weight: 500;
+      border: 1px solid #d4dde1;
+      background: $white;
+
+      .select__placeholder {
+        color: $lightGray;
+      }
+    }
+
+    .select__option {
+      padding-left: 16px;
+    }
+
+    .select__value-container {
+      margin-left: 8px;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+
+#shared-campaign-detail-summary {
+  .header-row-back {
+    text-decoration: none;
+  }
+
+  @include breakpoint(xs) {
+    .header-row-company {
+      margin-top: 6px;
+    }
+  }
+
+  h1 {
+    color: $lightGreen;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 32px;
+    margin-bottom: 8px;
+    word-break: break-word;
+  }
+
+  h2 {
+    color: $darkBlue;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20px;
+
+    &.white {
+      color: $white;
+    }
+
+    @include breakpoint(xs) {
+      font-size: 16px;
+    }
+  }
+
+  h4 {
+    color: $textLightGrey;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  a.pdf {
+    color: black;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+    &:before {
+      background-image: url(/assets/images/icon-pdf.png);
+      background-repeat: no-repeat;
+      background-size: 26px;
+      content: "";
+      display: inline-block;
+      height: 26px;
+      margin-right: 8px;
+      vertical-align: sub;
+      width: 26px;
+    }
+  }
+
+  .proposal-id-title {
+    display: flex;
+    color: $textLightGrey;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  .page-title {
+    font-size: 24px !important;
+    margin-top: 48px;
+    margin-bottom: 32px;
+
+    @include breakpoint(xs) {
+      margin: 24px;
+      font-size: 18px !important;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["dom", "es6", "es2017"],
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "components/*": ["portal/components/*"],
+      "models/*": ["portal/models/*"],
+      "helpers/*": ["portal/helpers/*"],
+      "constants/*": ["portal/constants/*"]
+    },
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+    "sourceMap": true
+  },
+  "exclude": ["node_modules", "public", "api"]
+}

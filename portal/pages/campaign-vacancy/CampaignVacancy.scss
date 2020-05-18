@@ -1,0 +1,123 @@
+@import "colors";
+@import "../styles/_mixins.scss";
+
+#campaign-vacancy {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+
+  .page-subtitle {
+    margin-top: 16px;
+    width: 720px;
+    color: $breadCrumbGrey;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+
+    @include breakpoint(xs) {
+      width: 100%;
+      font-size: 12px;
+    }
+  }
+  form {
+    &.vertical {
+      .input-group {
+        display: flex;
+      }
+    }
+
+    .input-group {
+      position: relative;
+
+      &.start-date {
+        margin-bottom: 20px;
+      }
+
+      label {
+        color: $darkBlue;
+        font-weight: 800;
+        margin-bottom: 12px;
+        margin-right: 48px;
+        font-size: 18px;
+        width: 188px;
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(xs) {
+          margin-right: 8px;
+          font-size: 14px;
+          width: 110px;
+        }
+      }
+
+      textarea {
+        color: $darkBlue;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid $grayBorder;
+        border-radius: 6px;
+        box-shadow: inset 0 4px 6px -6px #cbcbcb;
+        padding: 16px;
+        outline: none;
+        flex: 1;
+        margin-bottom: 24px;
+
+        &::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: $lightGray;
+        }
+
+        &::-moz-placeholder {
+          /* Firefox 19+ */
+          color: $lightGray;
+        }
+
+        &:-ms-input-placeholder {
+          /* IE 10+ */
+          color: $lightGray;
+        }
+
+        &:-moz-placeholder {
+          /* Firefox 18- */
+          color: $lightGray;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .sub-label {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          height: 16px;
+          width: 128px;
+          color: $lightGray;
+          font-size: 14px;
+          font-weight: 800;
+          line-height: 16px;
+        }
+
+        label {
+          margin-bottom: -16px;
+        }
+      }
+    }
+  }
+
+  .title-bar {
+    padding: 40px 0;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .shared-campaign {
+    margin-right: 10px;
+  }
+}

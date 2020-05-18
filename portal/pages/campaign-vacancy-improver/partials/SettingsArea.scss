@@ -1,0 +1,86 @@
+@import "colors";
+
+.settings-area {
+  flex: 1;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.16);
+  margin-top: 35px;
+  margin-bottom: 35px;
+  padding: 24px;
+  height: fit-content;
+
+  .settings {
+    color: $darkBlue;
+    margin-bottom: 30px;
+
+    h2 {
+      font-weight: 500;
+      font-size: 24px;
+
+      &:after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 44px;
+        background: $darkBlue;
+        margin: 5px 0;
+      }
+    }
+
+    .experience {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      user-select: none;
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked ~ .checkmark svg {
+          display: block;
+        }
+      }
+
+      .checkmark {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        height: 21px;
+        width: 21px;
+        background-color: $white;
+        border: 1px solid $grayBorder;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          display: none;
+          width: 16px;
+          height: 16px;
+          color: $lightGreen;
+        }
+      }
+    }
+  }
+
+  .check-btn {
+    width: 100%;
+    height: 40px;
+    background-color: $blue;
+    position: relative;
+    z-index: 1;
+  }
+
+  .vacancy-next-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

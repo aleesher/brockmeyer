@@ -1,0 +1,204 @@
+@import "colors";
+@import "mixins";
+
+#campaign-detail-summary .channel-item {
+  display: flex;
+  margin-bottom: 32px;
+  padding: 40px;
+  height: 100%;
+
+  @include breakpoint(xs) {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .channel-img {
+    flex: 1 1 20%;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .label {
+    display: flex;
+    flex: 1 1 20%;
+    margin-bottom: 16px;
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
+    }
+
+    .title {
+      color: $darkBlue;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+
+      @include breakpoint(xs) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex: 1 1 80%;
+    flex-direction: column;
+
+    .item-row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      flex-wrap: wrap;
+      height: auto;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $grayBorder;
+        padding-bottom: 16px;
+
+        @include breakpoint(xs) {
+          padding-bottom: 8px;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: 16px;
+
+        @include breakpoint(xs) {
+          padding-top: 8px;
+        }
+      }
+
+      .item-name {
+        flex: 1 1 30%;
+        color: $darkBlue;
+        font-size: 18px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include breakpoint(xs) {
+          font-size: 14px;
+        }
+
+        &.total {
+          flex: 1 1 70%;
+
+          .views-text {
+            font-size: 14px;
+            font-weight: 800;
+            line-height: 20px;
+            margin-right: 16px;
+          }
+
+          .show-results {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .item-text {
+        flex: 1 1 40%;
+        color: $breadCrumbGrey;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: right;
+
+        @include breakpoint(xs) {
+          display: none;
+        }
+
+        &:empty {
+          &::before {
+            content: "";
+            width: 20px;
+            height: 3px;
+            background: #01567f;
+          }
+        }
+      }
+
+      .item-price {
+        flex: 1 1 20%;
+        color: $darkBlue;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+
+        @include breakpoint(xs) {
+          font-size: 14px;
+          text-align: center;
+        }
+
+        .item-est-clicks {
+          font-size: 12px;
+          color: $breadCrumbGrey;
+          display: none;
+
+          @include breakpoint(xs) {
+            display: inline;
+          }
+        }
+      }
+
+      .item-toggle {
+        display: flex;
+        align-items: center;
+        color: $breadCrumbGrey;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 16px;
+        cursor: pointer;
+        flex: 1 1 10%;
+
+        @include breakpoint(xs) {
+          min-width: 65px;
+          margin-right: 10px;
+        }
+      }
+
+      .item-additional-panel {
+        display: none;
+        flex-direction: column;
+        margin-top: 16px;
+        flex: 1 1 100%;
+
+        &.folded-out {
+          display: flex;
+        }
+      }
+
+      .item-additional-panel .logo {
+        display: flex;
+        height: 40px;
+        width: 140px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .item-additional-panel .url {
+        color: $breadCrumbGrey;
+        font-size: 12px;
+        margin-top: 16px;
+
+        a {
+          color: $breadCrumbGrey;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}

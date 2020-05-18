@@ -1,0 +1,132 @@
+@import "colors";
+@import "mixins";
+
+.loading {
+  background-image: url("/assets/images/page_loading.gif");
+  background-size: 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 24px;
+  background-color: $white;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+#share-campaign-modal {
+  form {
+    &.vertical {
+      .input-group {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .input-group {
+      margin-bottom: 24px;
+      position: relative;
+
+      &.error {
+        .select__control {
+          border-color: $errorColor;
+        }
+
+        .error-text {
+          color: $errorColor;
+          font-size: 14px;
+          margin: 4px;
+        }
+      }
+
+      label {
+        color: $darkBlue;
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 18px;
+        display: flex;
+      }
+
+      .select__control {
+        height: 56px;
+        color: $lightGray;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid #d4dde1;
+        background: $white;
+
+        .select__placeholder {
+          color: $lightGray;
+        }
+      }
+
+      .select__option {
+        padding-left: 16px;
+      }
+
+      .select__value-container {
+        margin-left: 8px;
+      }
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: space-between;
+
+      .share-buton-container {
+        margin-left: 20px;
+      }
+    }
+
+    .date-container {
+      display: flex;
+    }
+
+    .stop-button {
+      margin: 0 20px;
+
+      @include breakpoint(xs) {
+        margin: 0 10px;
+      }
+    }
+
+    .shared-link-container {
+      width: calc(100% - 120px);
+      outline: none;
+      height: 50px;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      border: 1px solid #cccccc;
+
+      @include breakpoint(xs) {
+        font-size: 14px;
+      }
+    }
+
+    .bro-datepicker {
+      @include breakpoint(xs) {
+        width: 130px;
+        padding: 0 8px;
+        font-size: 14px;
+      }
+    }
+
+    .bro-button.presets {
+      @include breakpoint(xs) {
+        font-size: 14px;
+        padding: 0 26px;
+      }
+    }
+
+    .not-shared-buton-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

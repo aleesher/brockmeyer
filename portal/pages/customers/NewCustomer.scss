@@ -1,0 +1,25 @@
+@import "colors";
+@import "mixins";
+
+#new-customer {
+  .title-bar {
+    padding: 40px 0;
+
+    @include breakpoint(xs) {
+      padding: 20px;
+
+      .page-title {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(xs) {
+      padding: 20px;
+    }
+  }
+}

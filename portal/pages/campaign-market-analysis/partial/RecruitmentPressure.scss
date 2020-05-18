@@ -1,0 +1,14 @@
+#recruitment-pressure {
+  display: flex;
+  flex-direction: column;
+
+  .recruitment-pressure-graph {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+
+    div:first-child {
+      width: 800px;
+    }
+  }
+}

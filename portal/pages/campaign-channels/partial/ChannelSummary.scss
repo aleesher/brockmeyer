@@ -1,0 +1,241 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.selected-container {
+  box-sizing: border-box;
+  flex: 1;
+  padding: 16px;
+  min-width: 0;
+
+  @include breakpoint(lgmax) {
+    flex: 1.5;
+    padding: 16px 0 16px 8px;
+  }
+
+  .expand-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgGray;
+    transform: rotate(0);
+    transition: transform 0.3s ease-out;
+
+    @include breakpoint(sm) {
+      display: none;
+    }
+
+    &.expanded svg {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease-out;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  .selected-list {
+    @include breakpoint(xs) {
+      overflow: hidden;
+      position: relative;
+
+      &:not(.expanded) {
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+      }
+
+      &.expanded {
+        max-height: 360px;
+        overflow-y: scroll;
+        transition: max-height 0.3s ease-in;
+      }
+    }
+  }
+
+  h2 {
+    margin: 22px 0;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+
+  .mobile-discount {
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+
+  .fade-enter {
+    opacity: 0.01;
+  }
+
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 500ms ease-in;
+  }
+
+  .card {
+    position: relative;
+    padding: 24px 32px;
+    border-bottom: 1px solid $grayBorder;
+
+    h3 {
+      width: calc(100% - 8px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @include breakpoint(xs) {
+      padding: 16px;
+
+      h3 {
+        font-size: 16px;
+      }
+    }
+
+    p,
+    a {
+      font-size: 14px;
+      color: $lightGray;
+      margin-top: 4px;
+
+      @include breakpoint(xs) {
+        font-size: 12px;
+      }
+    }
+
+    a {
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
+      cursor: pointer;
+    }
+
+    .price {
+      color: $lightGreen;
+
+      @include breakpoint(xs) {
+        font-size: 16px;
+      }
+    }
+
+    .order-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove {
+      position: absolute;
+      right: 28px;
+      top: 24px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      color: $lightGray;
+
+      @include breakpoint(xs) {
+        top: 17px;
+        right: 16px;
+      }
+    }
+
+    .row {
+      margin-bottom: 8px;
+
+      &-saving {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .info-icon {
+          font-size: 16px;
+          margin-left: 6px;
+
+          &:hover + .info-message {
+            display: block;
+          }
+        }
+
+        .info-message {
+          position: absolute;
+          bottom: 24px;
+          width: 240px;
+          background: $white;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
+          padding: 16px;
+          font-size: 14px;
+          font-weight: 400;
+          display: none;
+        }
+      }
+    }
+
+    &.total {
+      border-bottom: 1px solid transparent;
+
+      .row {
+        margin-bottom: 0;
+
+        .price {
+          font-size: 24px;
+
+          @include breakpoint(xs) {
+            font-size: 20px;
+          }
+        }
+      }
+
+      p {
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        @include breakpoint(xs) {
+          font-size: 12px;
+          padding: 0;
+        }
+      }
+
+      a {
+        text-decoration: underline;
+
+        @include breakpoint(xs) {
+          font-size: 12px;
+        }
+      }
+
+      .next-btn {
+        margin-top: 24px;
+        width: 100%;
+
+        @include breakpoint(lgmax) {
+          margin-top: 12px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 0;
+    box-shadow: 0 -6px 15px 0 rgba(0, 0, 0, 0.08), 0 0px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+}

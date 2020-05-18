@@ -1,0 +1,41 @@
+@import "_mixins";
+@import "_colors";
+
+#campaign-header {
+  padding: 32px 128px;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-top: 1px solid $grayBorder;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+
+  @include breakpoint(xs) {
+    padding: 16px 18px;
+  }
+
+  .header-status {
+    height: 97px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    @include breakpoint(xs) {
+      height: 60px;
+    }
+  }
+
+  button {
+    height: 40px;
+    min-width: 180px;
+    background-color: $blue;
+    font-weight: 400;
+    justify-content: center;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+}

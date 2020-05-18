@@ -1,0 +1,120 @@
+@import "colors";
+@import "mixins";
+
+#edit-customer {
+  .customet-tab {
+    margin-top: 16px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid $grayBorder;
+
+    @include breakpoint(xs) {
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+
+    .menu-item {
+      height: 80px;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 16px;
+
+      @include breakpoint(xs) {
+        height: 50px;
+      }
+
+      a {
+        position: relative;
+        display: block;
+        color: $lightGray;
+        text-decoration: none;
+        transition: color 0.1s, background-color 0.1s;
+        font-weight: 500;
+        font-size: 16px;
+        outline: none;
+
+        @include breakpoint(xs) {
+          font-size: 14px;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -32px;
+          left: 50%;
+          height: 3px;
+          width: 0;
+          transition: width 0.2s ease-out, left 0.2s ease-out;
+          background-color: $lightGray;
+
+          @include breakpoint(xs) {
+            bottom: -18px;
+            height: 2px;
+          }
+        }
+      }
+
+      a:hover,
+      a:focus {
+        color: $darkBlue;
+        text-decoration: none;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -32px;
+          left: 0;
+          height: 3px;
+          width: 100%;
+          background-color: $lightGray;
+          transform-origin: left top;
+          transform: scale(1, 1);
+
+          @include breakpoint(xs) {
+            bottom: -18px;
+            height: 2px;
+          }
+        }
+      }
+    }
+
+    .menu-item.selected a {
+      color: $darkBlue;
+      text-decoration: none;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -32px;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: $lightGray;
+
+        @include breakpoint(xs) {
+          bottom: -18px;
+          height: 2px;
+        }
+      }
+    }
+  }
+
+  .title-bar {
+    padding: 40px 0;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(xs) {
+      padding: 20px;
+    }
+  }
+
+  .header-row-campaign-name {
+    min-height: 40px;
+  }
+}

@@ -1,0 +1,165 @@
+@import "colors";
+@import "mixins";
+
+.review-item {
+  padding: 40px;
+  display: flex;
+  margin-bottom: 32px;
+
+  @include breakpoint(xs) {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .label {
+    flex: 1 1 20%;
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: $darkBlue;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+
+      &.white {
+        color: $white;
+      }
+
+      @include breakpoint(xs) {
+        font-size: 18px;
+      }
+    }
+
+    .edit-button {
+      display: flex;
+      align-items: flex-end;
+      margin-top: 8px;
+      cursor: pointer;
+
+      .icon {
+        height: 18px;
+        color: $lightGray;
+        font-size: 18px;
+      }
+
+      span {
+        color: $breadCrumbGrey;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex: 1 1 80%;
+    flex-direction: column;
+
+    @include breakpoint(xs) {
+      padding: 0 10px;
+    }
+
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:not(:last-child) {
+        padding-bottom: 16px;
+        border-bottom: 1px solid $grayBorder;
+
+        @include breakpoint(xs) {
+          padding-bottom: 10px;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: 16px;
+
+        @include breakpoint(xs) {
+          padding-top: 10px;
+        }
+      }
+
+      .left-content {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        @include breakpoint(xs) {
+          flex-direction: column;
+          width: 70%;
+          align-items: flex-start;
+        }
+
+        .info-icon {
+          color: $white;
+          font-size: 16px;
+          margin-left: 6px;
+
+          &:hover + .info-message {
+            display: block;
+          }
+        }
+
+        .info-message {
+          background: $white;
+          font-size: 14px;
+          padding: 16px;
+          border-radius: 4px;
+          width: 280px;
+          position: absolute;
+          bottom: 24px;
+          left: 60px;
+          display: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .views-text {
+        color: $lightGray;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 20px;
+        margin-left: 16px;
+      }
+
+      .show-results {
+        color: $breadCrumbGrey;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        text-decoration: underline;
+        margin-left: 16px;
+        cursor: pointer;
+      }
+
+      .price {
+        color: $lightGreen;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 21px;
+        text-align: right;
+
+        &.white {
+          color: $white;
+        }
+
+        @include breakpoint(xs) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &.total {
+    @include breakpoint(xs) {
+      padding: 24px;
+      flex-direction: column;
+    }
+  }
+}

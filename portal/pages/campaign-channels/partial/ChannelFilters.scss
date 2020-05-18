@@ -1,0 +1,88 @@
+@import "_colors.scss";
+
+.filter-container {
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 22px 0;
+  }
+
+  .info-icon {
+    height: 18px;
+    width: 18px;
+    color: $breadCrumbGrey;
+    font-size: 18px;
+    margin-left: 4px;
+  }
+
+  ul {
+    padding-left: 5px;
+  }
+
+  li {
+    display: flex;
+
+    .checkbox {
+      padding-left: 25px;
+      position: relative;
+      user-select: none;
+
+      > input {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+
+        &:checked ~ .checkmark:after {
+          display: block;
+        }
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-color: white;
+      border: 1px solid #d4dde1;
+      border-radius: 4px;
+      box-shadow: inset 0 4px 6px -6px #cbcbcb;
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 5px;
+        top: 2px;
+        width: 4px;
+        height: 7px;
+        border: solid #646869;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    .label {
+      cursor: pointer;
+      line-height: 30px;
+      user-select: none;
+    }
+  }
+
+  h3 {
+    font-size: 14px;
+    color: $lightGray;
+    font-weight: 800;
+    margin: 8px 0;
+  }
+}

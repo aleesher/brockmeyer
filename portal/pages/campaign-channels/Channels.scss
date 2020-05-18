@@ -1,0 +1,103 @@
+@import "_colors.scss";
+@import "global.scss";
+
+#channels {
+  .channel-container {
+    @include breakpoint(lgmax) {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    margin: 0 -10%;
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    position: relative;
+
+    .result-container {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 3;
+
+      @include breakpoint(lgmax) {
+        flex: unset;
+        width: 66.67%;
+        box-sizing: border-box;
+        padding: 16px 8px 16px 0;
+      }
+
+      @include breakpoint(xs) {
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    .filters-bar {
+      margin: 14px 0;
+
+      .select-wrapper.showFilters {
+        display: none;
+      }
+    }
+
+    .channels-list {
+      transition: margin-top 0.3s ease-out, visibility 0.3s ease-out;
+      margin-top: 0;
+      visibility: visible;
+      flex: 3;
+      padding: 3px 16px;
+      box-sizing: border-box;
+      flex-basis: auto;
+
+      @include breakpoint(lgmax) {
+        margin-top: 25px;
+      }
+
+      &.tile-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+      }
+
+      &.hideChannelsList {
+        @include breakpoint(lgmax) {
+          transition: margin-top 0.3s ease-out, visibility 0.3s ease-out;
+        }
+      }
+    }
+
+    @include breakpoint(xs) {
+      margin: 0;
+    }
+  }
+
+  .title-bar {
+    padding: 42px 0;
+    border-bottom: 1px solid $grayBorder;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      box-sizing: border-box;
+
+      @include breakpoint(xs) {
+        padding: 8px 38px;
+      }
+    }
+
+    @include breakpoint(xs) {
+      justify-content: center;
+      padding: 20px;
+      margin-bottom: 70px;
+      visibility: visible;
+    }
+  }
+}

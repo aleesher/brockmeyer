@@ -1,0 +1,106 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.filter-container {
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @include breakpoint(lgmax) {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+
+    &.show {
+      position: relative;
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s ease-out;
+      max-height: none;
+      overflow: inherit;
+      margin-top: 10px;
+      flex-basis: auto;
+    }
+  }
+
+  .select-filter__value-container {
+    max-width: calc(100% - 73px);
+
+    .select-filter__multi-value {
+      max-width: 100%;
+    }
+  }
+
+  .css-1rtrksz {
+    -ms-flex-positive: 0;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    margin: 22px 0;
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+
+  .info-icon {
+    height: 18px;
+    width: 18px;
+    color: $breadCrumbGrey;
+    font-size: 18px;
+    margin-left: 4px;
+  }
+
+  .select-filter__multi-value {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color: $darkBlue;
+  }
+
+  h3 {
+    font-size: 14px;
+    color: $lightGray;
+    font-weight: 800;
+    margin: 8px 0;
+  }
+
+  .filter-box {
+    padding: 0 16px;
+
+    &.channels-sort {
+      @include breakpoint(sm) {
+        display: none;
+      }
+    }
+
+    @include breakpoint(lgmax) {
+      width: 100%;
+      box-sizing: border-box;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      display: flex;
+    }
+
+    & > div {
+      @include breakpoint(lgmax) {
+        width: calc(50% - 8px);
+      }
+
+      @include breakpoint(xxs) {
+        width: 100%;
+      }
+    }
+  }
+}

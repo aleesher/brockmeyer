@@ -1,0 +1,139 @@
+@import "~react-quill/dist/quill.snow.css";
+@import "colors";
+
+.text-area {
+  flex: 3;
+  min-height: 840px;
+  background: $white;
+  border: 1px solid $grayBorder;
+  box-shadow: 0 0 48px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+
+  &.not-dutch {
+    min-height: 400px;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+
+    .number-of-words {
+      padding: 14px 16px;
+      color: $lightGray;
+    }
+  }
+
+  .quill-editable-area {
+    height: calc(100% - 49px);
+
+    .ql-toolbar.ql-snow {
+      border-width: 1px 0;
+    }
+
+    .ql-container.ql-snow {
+      max-height: calc(100% - 42px);
+      border: none;
+    }
+
+    .ql-container .ql-editor {
+      padding: 14px 18px;
+      font-size: 16px;
+    }
+
+    .ql-editor {
+      overflow: hidden;
+
+      strong {
+        font-weight: bold;
+      }
+
+      em {
+        font-style: italic;
+      }
+
+      span {
+        position: relative;
+      }
+
+      /**
+      * Tooltip Styles
+      */
+
+      /* Add this attribute to the element that needs a tooltip */
+      [data-pullfactor-name] {
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+      }
+
+      /* Hide the tooltip content by default */
+      [data-pullfactor-name]:before,
+      [data-pullfactor-name]:after {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Position tooltip above the element */
+      [data-pullfactor-name]:before {
+        position: absolute;
+        bottom: calc(150% + 28.23px);
+        left: 50%;
+        margin-bottom: 5px;
+        margin-left: -100px;
+        padding: 7px;
+        padding-bottom: 0;
+        width: 220px;
+        background-color: $black;
+        color: $white;
+        content: attr(data-pullfactor-name);
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.2;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        font-weight: 700;
+        z-index: 2;
+      }
+
+      /* Triangle hack to make tooltip look like a speech bubble */
+      [data-pullfactor-name]:after {
+        position: absolute;
+        bottom: 150%;
+        left: 50%;
+        margin-bottom: 5px;
+        margin-left: -100px;
+        padding: 7px;
+        width: 220px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: $black;
+        content: attr(data-pullfactor-score);
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 700;
+        z-index: 1;
+      }
+
+      /* Show tooltip content on hover */
+      [data-pullfactor-name]:hover:before,
+      [data-pullfactor-name]:hover:after {
+        visibility: visible;
+        opacity: 1;
+        box-sizing: border-box;
+      }
+
+      [data-color="blue"]:after {
+        color: $tooltipBlue;
+      }
+      [data-color="green"]:after {
+        color: $tooltipGreen;
+      }
+      [data-color="red"]:after {
+        color: $errorColor;
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.template-card {
+  height: 180px;
+  box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  background-color: $white;
+  padding: 16px;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.tile-list,
+  &.tile-group,
+  &.tile {
+    flex-wrap: wrap;
+    height: auto;
+    width: calc(33% - 6px);
+    margin-right: 9px;
+    float: left;
+    margin-bottom: 16px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+
+    .template-card-img {
+      width: 100%;
+    }
+
+    .template-card-info {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 16px;
+
+      .content-line {
+        margin-bottom: 8px;
+        height: 16px;
+
+        @include breakpoint(xs) {
+          margin-bottom: 0;
+        }
+      }
+
+      .content-line:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .template-card-img {
+    height: 148px;
+    width: 200px;
+    background-color: $googleGrey;
+    border-radius: 4px;
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+  }
+
+  .template-card-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 16px;
+    flex-direction: column;
+
+    @include breakpoint(xs) {
+      .content-line:nth-child(4) {
+        display: none;
+      }
+      width: 100%;
+      height: 60px;
+      padding-left: 0;
+      margin-top: 16px;
+    }
+  }
+}
+
+.long-template-card {
+  height: 100px;
+  align-items: center;
+
+  .template-card-info {
+    flex-direction: row;
+    padding-right: 16px;
+    margin-top: 0px;
+  }
+}
+
+.long-template-card-mobile {
+  height: 94px;
+  padding: 12px 24px;
+  margin-top: 0px;
+  align-items: center;
+
+  .template-card-info {
+    margin-top: 0px;
+    padding: 0px;
+    height: 70px;
+    flex-direction: column;
+    width: 100%;
+    float: left;
+    .content-line:nth-child(4) {
+      display: flex;
+    }
+
+    .row {
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.template-channels.tile-list,
+.template-channels.tile-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.organizations-card {
+  height: 100px;
+  padding: 16px 32px;
+  align-items: center;
+  flex-direction: row;
+
+  @include breakpoint(xs) {
+    height: 72px;
+    padding: 12px 24px;
+    flex-wrap: nowrap;
+  }
+
+  .organizations-card-img {
+    height: 64px;
+    width: 86px;
+
+    @include breakpoint(xs) {
+      height: 48px;
+      width: 64px;
+    }
+  }
+
+  .template-card-info {
+    @include breakpoint(xs) {
+      margin-top: 0px;
+      padding-left: 16px;
+      height: 48px;
+      width: 100%;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.channel-review-card {
+  padding: 40px;
+  margin-bottom: 32px;
+  height: auto;
+
+  .template-label {
+    flex: 1 1 20%;
+
+    h3 {
+      color: #002335;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+    }
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .template-content {
+    display: flex;
+    flex: 1 1 80%;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    .channel-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 32px;
+  }
+
+  @include breakpoint(xs) {
+    padding: 20px;
+    flex-direction: column;
+  }
+}

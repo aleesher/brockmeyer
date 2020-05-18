@@ -1,0 +1,120 @@
+@import "colors";
+@import "_mixins.scss";
+
+#campaign-add-ons {
+  .page-content {
+    display: flex;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .add-ons-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .add-ons-channels {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    padding: 16px;
+
+    @include breakpoint(xs) {
+      padding: 16px 16px 100px;
+    }
+
+    .title {
+      margin: 22px 0;
+    }
+  }
+
+  .channel-wrapper {
+    &.open {
+      .channel-item {
+        margin-bottom: 4px;
+      }
+    }
+
+    .channel-desc-wrapper {
+      display: flex;
+      position: relative;
+      animation: fadeIn 2s;
+
+      .channel-desc {
+        flex: 1;
+        border: 1px solid $white;
+        border-radius: 10px;
+        background: $white;
+        padding: 16px;
+        margin: 16px 0;
+        box-shadow: 2px 0px 5px 0px rgba(2, 2, 2, 0.2);
+      }
+
+      .popper-arrow {
+        border-style: solid;
+        position: absolute;
+        border-width: 5px 15px 15px 15px;
+        border-color: transparent transparent $white transparent;
+        left: 45%;
+        top: -4px;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.add-ons {
+  &.full-screen .container-center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .contact-person-form .input-group label {
+    line-height: 40px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .bro-input-wrapper {
+    margin-bottom: 10px;
+
+    input.bro-input {
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+  .bro-droplist {
+    margin-bottom: 10px;
+
+    .select select.bro-select {
+      height: 40px;
+      font-size: 16px;
+    }
+  }
+
+  .bro-multi-select .select__control {
+    min-height: 40px;
+    font-size: 16px;
+  }
+
+  .footer {
+    padding: 24px 0;
+  }
+}

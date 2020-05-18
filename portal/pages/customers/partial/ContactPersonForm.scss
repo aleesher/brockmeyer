@@ -1,0 +1,95 @@
+@import "colors";
+@import "mixins";
+
+.contact-person-form {
+  max-width: 1050px;
+
+  .edit-form {
+    margin-left: 128px;
+  }
+
+  &.vertical {
+    .input-group {
+      display: flex;
+    }
+  }
+
+  .input-group {
+    position: relative;
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+      padding: 0 20px;
+
+      .bro-input-wrapper,
+      .bro-droplist,
+      .bro-multi-select {
+        max-width: 100%;
+        margin-bottom: 12px;
+
+        input.bro-input,
+        select.bro-select {
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+
+      .bro-multi-select .select__control {
+        min-height: 44px;
+        font-size: 14px;
+      }
+    }
+
+    label {
+      color: $darkBlue;
+      font-weight: 800;
+      margin-bottom: 12px;
+      margin-right: 48px;
+      font-size: 18px;
+      width: 170px;
+      line-height: 56px;
+
+      @include breakpoint(xs) {
+        font-size: 14px;
+        margin: 0;
+        line-height: 40px;
+      }
+    }
+  }
+
+  .select__multi-value {
+    border-radius: 3px;
+
+    @include breakpoint(xs) {
+      max-width: 70%;
+    }
+
+    .select__multi-value__label {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 12px;
+
+      @include breakpoint(xs) {
+        font-size: 12px;
+        padding: 8px 5px;
+      }
+    }
+
+    .select__multi-value__remove {
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px;
+      opacity: 0.5;
+
+      @include breakpoint(xs) {
+        padding: 4px;
+      }
+    }
+  }
+
+  &.submitting {
+    cursor: wait;
+  }
+}

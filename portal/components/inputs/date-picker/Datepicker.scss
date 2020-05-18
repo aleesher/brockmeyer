@@ -1,0 +1,44 @@
+@import "../../styles/colors";
+@import "../styles/_mixins.scss";
+
+input.bro-datepicker {
+  color: $darkBlue;
+  font-size: 18px;
+  font-weight: 500;
+  height: 56px;
+  border: 1px solid $grayBorder;
+  border-radius: 6px;
+  box-shadow: inset 0 4px 6px -6px $shadowGray;
+  padding-left: 16px;
+  padding-right: 16px;
+  outline: none;
+  width: 160px;
+  background-image: url(/assets/images/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: top 16px right 16px;
+  background-size: 24px;
+
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $lightGray;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $lightGray;
+  }
+
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $lightGray;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $lightGray;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

@@ -1,0 +1,39 @@
+@import "colors";
+@import "mixins";
+
+.empty-message {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18px;
+  font-weight: 400;
+
+  &.shiftErrorMessage {
+    margin-top: 125px;
+  }
+
+  @include breakpoint(xs) {
+    padding: 0 24px;
+  }
+
+  .empty-message-img {
+    max-width: 200px;
+    margin-top: 40px;
+  }
+
+  .empty-message-text {
+    line-height: 30px;
+
+    a {
+      color: $blue;
+      font-weight: 500;
+      transition: 0.15s ease-in-out;
+      border-bottom: 1px solid $blue;
+      text-decoration: none;
+
+      &:hover {
+        color: inherit;
+        border-color: inherit;
+      }
+    }
+  }
+}

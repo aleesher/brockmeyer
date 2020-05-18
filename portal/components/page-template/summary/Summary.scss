@@ -1,0 +1,18 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.template-summary {
+  width: 100%;
+  box-sizing: border-box;
+
+  @include breakpoint(xs) {
+    padding: 0;
+  }
+
+  .summary-wrapper {
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  }
+  .summary-title {
+    width: 100%;
+  }
+}

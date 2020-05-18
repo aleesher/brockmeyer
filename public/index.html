@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Brockmeyer Portal</title>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T23CB9M');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/images/pwa-logo/icon-144x144.png" />
+  <meta name="theme-color" content="white" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Brockmeyer" />
+  <meta name="msapplication-TileImage" content="assets/images/pwa-logo/hello-icon-144.png" />
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+  <link href="assets/images/splashscreens/iphone5_splash.png"
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/iphone6_splash.png"
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/iphoneplus_splash.png"
+    media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/iphonex_splash.png"
+    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/ipad_splash.png"
+    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/ipadpro1_splash.png"
+    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image" />
+  <link href="assets/images/splashscreens/ipadpro2_splash.png"
+    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
+    rel="apple-touch-startup-image" />
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T23CB9M" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="application"></div>
+
+  <script type="text/javascript">
+    const iOS = !!navigator.platform && /iPhone/.test(navigator.platform);
+    if (iOS) {
+      document.querySelector('link[rel="manifest"]').setAttribute("rel", "no-on-ios");
+    }
+    // eslint-disable-next-line no-restricted-globals, no-undef
+    window.addEventListener("offline", () => {
+      // eslint-disable-next-line no-alert, no-undef
+      if ("Notification" in window && navigator.serviceWorker) {
+        if (Notification.permission === "granted") {
+          navigator.serviceWorker.getRegistration().then(function (reg) {
+            var options = {
+              body: "The app is now offline",
+              icon: "assets/images/logo.png",
+              badge: "assets/images/pwa-logo/icon-72x72.png",
+              vibrate: [100, 50, 100],
+              data: {
+                dateOfArrival: Date.now(),
+                primaryKey: 1
+              },
+              actions: [{ action: "ok", title: "Okay, thank you!" }]
+            };
+            reg.showNotification("Internet is disabled", options);
+          });
+        } else if (Notification.permission === "blocked") {
+          console.info("Notifications blocked");
+        } else {
+          Notification.requestPermission(function (status) {
+            console.info("Notification permission status:", status);
+          });
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

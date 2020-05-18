@@ -1,0 +1,133 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.campaign-detail {
+  margin-top: 32px;
+  padding: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+
+  @include breakpoint(xs) {
+    padding: 20px 8px;
+  }
+
+  &:nth-child(2) {
+    @include breakpoint(xs) {
+      margin-top: 0;
+    }
+  }
+
+  .label {
+    width: 208px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint(xs) {
+      min-width: 90px;
+      width: 90px;
+      font-size: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .name {
+      display: flex;
+    }
+  }
+
+  .divider {
+    border-right: 1px solid $grayBorder;
+    margin: -32px 32px;
+
+    @include breakpoint(xs) {
+      margin: -20px 10px;
+    }
+  }
+
+  .card-input-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+
+    @include breakpoint(xs) {
+      width: calc(100% - 146px);
+    }
+
+    .select__multi-value {
+      border-radius: 3px;
+
+      @include breakpoint(xs) {
+        max-width: 70%;
+      }
+
+      .select__multi-value__label {
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 12px;
+
+        @include breakpoint(xs) {
+          font-size: 12px;
+          padding: 8px 5px;
+        }
+      }
+
+      .select__multi-value__remove {
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px;
+        opacity: 0.5;
+
+        @include breakpoint(xs) {
+          padding: 4px;
+        }
+      }
+    }
+
+    .select__value-container {
+      @include breakpoint(xs) {
+        padding: 2px 0;
+        max-width: 60%;
+      }
+
+      .css-1ep9fjw {
+        @include breakpoint(xs) {
+          padding: 4px;
+        }
+      }
+    }
+
+    .select__clear-indicator {
+      @include breakpoint(xs) {
+        padding: 0px;
+        max-width: 40%;
+      }
+    }
+
+    .select__dropdown-indicator {
+      padding: 2px;
+
+      @include breakpoint(xs) {
+        padding: 0px;
+        max-width: 40%;
+      }
+    }
+
+    .select__indicators {
+      max-width: 30%;
+    }
+  }
+
+  .max-details {
+    color: $lightGray;
+    font-size: 14px;
+
+    @include breakpoint(xs) {
+      font-size: 12px;
+    }
+  }
+}

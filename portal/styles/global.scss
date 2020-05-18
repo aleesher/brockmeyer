@@ -1,0 +1,171 @@
+@import "variables";
+@import "colors";
+@import "mixins";
+@import "fonts";
+@import "reset";
+@import "footer";
+@import "animation";
+
+#application {
+  width: 100%;
+  font-size: 12px;
+
+  .toast-head {
+    justify-content: center;
+    > button {
+      align-self: auto;
+    }
+  }
+
+  .toast-body {
+    color: $white;
+    flex: unset;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100vw;
+  }
+
+  .page-container {
+    width: 100%;
+
+    &.OpenSans {
+      font-family: "OpenSans";
+    }
+
+    &.Raleway {
+      font-family: "Raleway";
+    }
+  }
+
+  .tour-scroll {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    max-height: 75vh;
+  }
+
+  .card {
+    background-color: $white;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .fade-enter {
+    opacity: 0.01;
+  }
+
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-out;
+  }
+
+  .loading {
+    background-image: url("/assets/images/page_loading.gif");
+    background-size: 64px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-size: 24px;
+    background-color: $white;
+    opacity: 0.6;
+    z-index: 10;
+  }
+
+  .page-title {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+
+    @include breakpoint(xs) {
+      font-size: 24px;
+    }
+  }
+
+  .page-content {
+    @include breakpoint(xs) {
+      padding: 15px;
+    }
+
+    @include breakpoint(sm) {
+      padding: 0 16px;
+    }
+
+    @include breakpoint(md) {
+      padding: 0 10%;
+    }
+  }
+
+  .btn {
+    border-radius: 100px;
+    background-color: $lightGreen;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    color: $white;
+    font-weight: 500;
+    outline: 0;
+
+    &:disabled {
+      filter: grayscale(100%);
+      * {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .pill-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+body {
+  background-color: $bgGray;
+}
+
+.bro-button {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.presets {
+    height: 48px;
+    color: $white;
+    outline: 0;
+    border: none;
+    font-size: 15px;
+    border-radius: 32px;
+    font-weight: 500;
+    padding: 0 36px;
+  }
+
+  &.primary {
+    background-color: $lightGreen;
+  }
+
+  &.secondary {
+    background-color: $lightGray;
+  }
+
+  &.next-btn {
+    width: 256px;
+    justify-content: space-between;
+
+    @include breakpoint(xs) {
+      margin: 0 auto;
+    }
+  }
+}

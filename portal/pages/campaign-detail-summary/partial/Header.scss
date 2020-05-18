@@ -1,0 +1,21 @@
+@import "colors";
+@import "mixins";
+
+#header-campaign {
+  .container-retract {
+    position: absolute;
+    right: 128px;
+    top: calc(50% - 17.5px);
+
+    @include breakpoint(xs) {
+      position: static;
+      margin-top: 16px;
+    }
+  }
+  .campaign-id-container {
+    color: #002335;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}

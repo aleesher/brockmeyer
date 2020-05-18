@@ -1,0 +1,39 @@
+@import "colors";
+@import "mixins";
+
+#campaign-detail-summary {
+  .header-row-back {
+    text-decoration: none;
+  }
+
+  @include breakpoint(xs) {
+    .header-row-company {
+      margin-top: 6px;
+    }
+  }
+
+  h2 {
+    color: $darkBlue;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20px;
+    &.white {
+      color: $white;
+    }
+
+    @include breakpoint(xs) {
+      font-size: 16px;
+    }
+  }
+
+  .page-title {
+    font-size: 24px !important;
+    margin-top: 48px;
+    margin-bottom: 32px;
+
+    @include breakpoint(xs) {
+      margin: 24px;
+      font-size: 18px !important;
+    }
+  }
+}

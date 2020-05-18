@@ -1,0 +1,39 @@
+@import "_mixins.scss";
+
+#page-template {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  .template-channels {
+    flex: 3;
+    padding-bottom: 16px;
+
+    &.tile {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      @include breakpoint(xs) {
+        display: block;
+      }
+    }
+
+    @include breakpoint(xs) {
+      flex: 4;
+    }
+  }
+
+  .template-summary-wrapper {
+    flex: 1;
+    padding: 16px;
+
+    @include breakpoint(lgmax) {
+      flex: 1.5;
+    }
+
+    @include breakpoint(xs) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import "colors";
+
+#campaign-social-media {
+  .instagram {
+    background-color: $white;
+    box-shadow: 0 6px 15px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 48px;
+    padding: 36px;
+
+    h3 {
+      color: $darkBlue;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    ul {
+      display: flex;
+      margin-top: 85px;
+      position: relative;
+
+      li {
+        align-items: center;
+        background-color: #fafafa;
+        border-radius: 8px 8px 0 0;
+        border: 2px #e9e8e4 solid;
+        border-bottom-color: #fafafa;
+        color: black;
+        cursor: pointer;
+        display: flex;
+        font-size: 16px;
+        font-weight: 800;
+        height: 50px;
+        justify-content: center;
+        margin-right: 8px;
+        position: absolute;
+        top: -52px;
+        width: 147px;
+      }
+    }
+
+    .instagram-header {
+      align-items: center;
+      background-color: #fafafa;
+      border-radius: 0 8px 0 0;
+      border: 2px #e9e8e4 solid;
+      border-bottom: none;
+      display: flex;
+      padding: 16px;
+
+      img {
+        width: 90px;
+      }
+    }
+
+    .instagram-content {
+      background-color: white;
+      border: 2px #e9e8e4 solid;
+      display: flex;
+      justify-content: center;
+
+      .instagram-post {
+        background-color: white;
+        border: 2px solid #e9e8e4;
+        margin: 32px 0;
+        width: 450px;
+
+        .instagram-post-header {
+          align-items: center;
+          background-color: #fafafa;
+          border-bottom: 2px solid #e9e8e4;
+          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+          display: flex;
+          height: 30px;
+          justify-content: space-between;
+          padding: 8px;
+
+          > svg {
+            font-size: 27px;
+          }
+
+          svg:last-child {
+            margin-top: -11px;
+            transform: rotate(-27deg);
+          }
+
+          .logo {
+            width: 95px;
+          }
+        }
+
+        .menu {
+          align-items: center;
+          border-bottom: 1px solid #e9e8e4;
+          color: #989898;
+          display: flex;
+          flex-direction: row-reverse;
+          height: 50px;
+          padding: 0 12px;
+        }
+
+        .picture {
+          height: 450px;
+          margin-top: 35px;
+          width: 100%;
+        }
+
+        .buttons {
+          align-items: center;
+          color: black;
+          display: flex;
+          height: 40px;
+          padding: 20px 10px 10px 10px;
+
+          > img {
+            height: 36px;
+          }
+
+          img:last-child {
+            margin-left: auto;
+          }
+
+          img + img {
+            margin-left: 16px;
+          }
+
+          img.flip {
+            transform: scaleX(-1);
+          }
+        }
+
+        .descriptions {
+          font-size: 15px;
+          font-weight: 600;
+          height: 55px;
+          padding: 0 10px;
+        }
+
+        .post-footer {
+          align-items: center;
+          background-color: #fafafa;
+          border-top: 2px solid #e9e8e4;
+          color: #c6c6c6;
+          display: flex;
+          height: 55px;
+          justify-content: space-between;
+          padding: 0 24px;
+
+          > svg {
+            font-size: 30px;
+          }
+
+          .active {
+            color: #212121;
+          }
+        }
+      }
+    }
+  }
+}

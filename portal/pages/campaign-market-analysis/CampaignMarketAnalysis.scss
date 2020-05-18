@@ -1,0 +1,52 @@
+@import "_colors.scss";
+
+#campaign-market-analysis {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+
+  .card {
+    display: flex;
+    margin-bottom: 32px;
+    padding: 28px;
+
+    .label {
+      color: $darkBlue;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 29px;
+      display: flex;
+    }
+  }
+
+  .ig-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+      font-size: 12px;
+      margin-right: 8px;
+      color: grey;
+    }
+
+    img {
+      height: 18px;
+    }
+  }
+
+  .title-bar {
+    padding: 42px 0;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .highcharts-credits {
+    display: none;
+  }
+}

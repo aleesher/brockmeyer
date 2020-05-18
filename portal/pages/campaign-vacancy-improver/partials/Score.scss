@@ -1,0 +1,76 @@
+@import "colors";
+
+.score-chart-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .highcharts-background {
+    fill: none;
+  }
+
+  .score-chart-label {
+    color: $darkBlue;
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.sub-header {
+  padding-bottom: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  &.score {
+    padding: 8px 0;
+  }
+
+  .number {
+    font-weight: 500;
+    font-size: 16px;
+    margin-right: 4px;
+  }
+
+  &.description {
+    color: #9daeb6;
+  }
+}
+
+.score {
+  .highcharts-container {
+    position: absolute !important;
+    top: -23px !important;
+    right: -40px !important;
+    left: auto !important;
+  }
+
+  .icon {
+    margin-left: 5px;
+    margin-right: 10px;
+    width: 20px;
+    height: 21px;
+    z-index: 2;
+
+    &.check {
+      color: $lightGreen;
+    }
+
+    &.cancel {
+      color: $darkRed;
+    }
+
+    &.error {
+      color: $blue;
+    }
+
+    &.highcharts-root {
+      width: 48px !important;
+      height: 48px !important;
+    }
+  }
+
+  &.last {
+    margin-bottom: 20px;
+  }
+}

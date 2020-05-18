@@ -1,0 +1,40 @@
+const Router = require("express");
+
+const router = Router();
+const campaignChannels = require("./campaign-channels");
+const campaigns = require("./campaigns");
+const campaignStatusTypes = require("./campaign-status-types");
+const channelFilters = require("./channel-filters");
+const channels = require("./channels");
+const channelTypes = require("./channel-types");
+const contacts = require("./contacts");
+const contactTypes = require("./contact-types");
+const countries = require("./countries");
+const customers = require("./customers");
+const images = require("./images");
+const dataLanguages = require("./data-languages");
+const me = require("./me");
+const marketAnalysis = require("./market-analysis");
+const occupations = require("./occupations");
+const vacancyImprover = require("./vacancy-improver");
+const campaignDetails = require("./campaign-details");
+
+router.use("/campaign-channels", campaignChannels);
+router.use("/campaign-status-types", campaignStatusTypes);
+router.use("/campaigns", campaigns);
+router.use("/channel-filters", channelFilters);
+router.use("/channel-types", channelTypes);
+router.use("/channels", channels);
+router.use("/contact-types", contactTypes);
+router.use("/contacts", contacts);
+router.use("/countries", countries);
+router.use("/customers", customers);
+router.use("/images", images);
+router.use("/data-languages", dataLanguages);
+router.use("/me", me);
+router.use("/market-analysis", marketAnalysis);
+router.use("/occupations", occupations);
+router.use("/vacancy-improver", vacancyImprover);
+router.use("/campaign-details", campaignDetails);
+
+module.exports = router;

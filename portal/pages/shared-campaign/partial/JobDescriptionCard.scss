@@ -1,0 +1,92 @@
+@import "colors";
+@import "mixins";
+@import "~react-quill/dist/quill.snow.css";
+
+.job-item {
+  display: flex;
+  margin-bottom: 32px;
+  padding: 40px;
+  flex-direction: column;
+
+  @include breakpoint(xs) {
+    padding: 24px;
+  }
+
+  .label {
+    display: flex;
+
+    @include breakpoint(xs) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .label .title {
+    color: $darkBlue;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+
+    @include breakpoint(xs) {
+      font-size: 18px;
+    }
+  }
+
+  .content {
+    color: $breadCrumbGrey;
+    font-size: 18px;
+    line-height: 16px;
+    margin-top: 15px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em !important;
+  }
+
+  h3 {
+    font-size: 1.17em;
+  }
+
+  h4 {
+    font-size: 1em;
+  }
+
+  h5 {
+    font-size: 0.83em;
+  }
+
+  ol {
+    display: block;
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+  }
+
+  li {
+    display: list-item;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+  }
+}

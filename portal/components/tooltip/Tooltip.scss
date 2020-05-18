@@ -1,0 +1,43 @@
+@import "_colors.scss";
+@import "_mixins.scss";
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  margin: 0px 6px;
+
+  .tooltip-icon {
+    font-size: 16px;
+    color: $black;
+    cursor: pointer;
+  }
+
+  .tip {
+    max-width: 320px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 12px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-align: center;
+
+    @include breakpoint(xs) {
+      max-width: 150px;
+      font-size: 10px;
+    }
+  }
+}
+
+.tooltip-overlap {
+  z-index: 1;
+}
+
+.tooltip-clicked {
+  .tooltip-text {
+    display: block;
+  }
+
+  &:active .tooltip-text {
+    display: block;
+  }
+}

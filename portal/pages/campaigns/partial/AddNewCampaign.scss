@@ -1,0 +1,62 @@
+@import "colors";
+
+#add-new-campaign {
+  form {
+    &.vertical {
+      .input-group {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .input-group {
+      margin-bottom: 24px;
+      position: relative;
+
+      &.error {
+        .select__control {
+          border-color: $errorColor;
+        }
+
+        .error-text {
+          color: $errorColor;
+          font-size: 14px;
+          margin: 4px;
+        }
+      }
+
+      label {
+        color: $darkBlue;
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 18px;
+        display: flex;
+      }
+
+      .select__control {
+        height: 56px;
+        color: $lightGray;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid #d4dde1;
+        background: $white;
+
+        .select__placeholder {
+          color: $lightGray;
+        }
+      }
+
+      .select__option {
+        padding-left: 16px;
+      }
+
+      .select__value-container {
+        margin-left: 8px;
+      }
+    }
+
+    .btn-container {
+      display: flex;
+    }
+  }
+}

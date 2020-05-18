@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "./public/*.js"
+    ]
+  },
+  "rules": {
+    "import/newline-after-import": false,
+    "interface-name": false,
+    "jsx-boolean-value": false,
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "jsx-no-string-ref": false,
+    "max-classes-per-file": false,
+    "member-ordering": false,
+    "no-console": false,
+    "no-debugger": false,
+    "no-shadowed-variable": false,
+    "no-unused-expression": [true, "allow-fast-null-checks"],
+    "no-unused-variable": true,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "prefer-const": true,
+    "variable-name": false,
+    "member-access": [true, "no-public"]
+  }
+}
